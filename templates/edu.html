@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Step 2 – Education Qualification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='validate.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Step 2: Education Qualification</h2>
+
+        <form method="post" action="/edu">
+
+            <!-- fields from step-1 -->
+            <input type="hidden" name="first_name" value="{{ session['first_name'] }}">
+            <input type="hidden" name="last_name"  value="{{ session['last_name']  }}">
+            <input type="hidden" name="email"      value="{{ session['email']      }}">
+            <input type="hidden" name="dob"        value="{{ session['dob']        }}">
+            <input type="hidden" name="gender"     value="{{ session['gender']     }}">
+            <input type="hidden" name="phoneno"    value="{{ session['phoneno']    }}">
+            <input type="hidden" name="city"       value="{{ session['city']       }}">
+            <input type="hidden" name="state"      value="{{ session['state']      }}">
+
+            <label>Degree <span style="color:red;">*</span>
+                <input type="text" name="degree" placeholder="e.g. B.Sc." required>
+            </label><br>
+
+            <label>Institution <span style="color:red;">*</span>
+                <input type="text" name="institution" required>
+            </label><br>
+
+            <label>Subject / Major <span style="color:red;">*</span>
+                <input type="text" name="subject">
+            </label><br>
+
+            <label>CGPA (Out of 10) <span style="color:red;">*</span>
+                <input type="number" name="cgpa" step="0.01" min="0" max="10" required>
+            </label><br>
+
+            <label>Year Started <span style="color:red;">*</span>
+                <input type="number" name="year_started" min="1900" max="2100" required>
+            </label><br>
+
+            <label>Graduation Year <span style="color:red;">*</span>
+                <input type="number" name="year_graduated" min="1900" max="2100" required>
+            </label><br>
+
+            <button type="submit">Finish</button>
+        </form>
+    </div>
+</body>
+</html>

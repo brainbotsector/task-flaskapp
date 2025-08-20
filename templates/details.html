@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Step 1 – Personal Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='validate.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Step 1: Personal Details</h2>
+        <form method="post" action="/details">
+            <label>First Name <span style="color:red;">*</span> <input type="text" name="first_name" required></label><br>
+            <label>Last Name <span style="color:red;">*</span>  <input type="text" name="last_name"  required></label><br>
+            <label>Email <span style="color:red;">*</span>   <input type="email" name="email"     required></label><br>
+            <label>DOB <span style="color:red;">*</span>      <input type="date"  name="dob"       required></label><br>
+
+            <label>Gender <span style="color:red;">*</span>
+                <select name="gender" required>
+                    <option value="">--select--</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </label><br>
+
+            <label>Phone<span style="color:red;">*</span>  <input type="tel" name="phoneno" pattern="\d{10}" placeholder="1234567890" required></label><br>
+            <label>City <span style="color:red;">*</span> <input type="text" name="city" required></label><br>
+            <label>State <span style="color:red;">*</span> <input type="text" name="state" required></label><br>
+
+            <button type="submit">Next</button>
+        </form>
+    </div>
+</body>
+</html>
